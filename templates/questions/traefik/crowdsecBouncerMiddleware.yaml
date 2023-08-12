@@ -1,0 +1,32 @@
+- variable: addPrefix
+  label: Add Prefix
+  schema:
+    type: list
+    default: []
+    items:
+      - variable: crowdsecEntry
+        label: ""
+        schema:
+          additional_attrs: true
+          type: dict
+          attrs:
+            - variable: name
+              label: Name
+              schema:
+                type: string
+                required: true
+                default: ""
+            - variable: crowdsecLapiKey
+              label: Crowdsec Local API Key
+              description: This is the API key from you local crowdsec api server. This is NOT your enrollment code.
+              schema:
+                type: string
+                required: true
+                default: ""
+            - variable: host
+              label: Crowdsec Local API Host
+              description: This is the host from you local crowdsec api server.
+              schema:
+                type: string
+                required: true
+                default: ""

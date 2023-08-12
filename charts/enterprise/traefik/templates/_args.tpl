@@ -176,6 +176,11 @@ args:
   - "--experimental.localPlugins.traefik-real-ip.modulename=github.com/soulbalz/traefik-real-ip"
   {{- end }}
   {{/* End of RealIP */}}
+  {{/* Crowdsec */}}
+  {{- if .Values.middlewares.crowdsec }}
+  - "--experimental.plugins.crowdsec-bouncer-traefik-plugin.modulename=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
+  {{- end }}
+  {{/* End of Crowdsec */}}
   {{- with .Values.additionalArguments }}
   {{- range . }}
   - {{ . | quote }}

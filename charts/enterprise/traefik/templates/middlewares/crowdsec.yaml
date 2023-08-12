@@ -1,0 +1,14 @@
+{{- range $index, $middlewareData := .Values.middlewares.crowdsec }}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ ternary (printf "%v-%v" $.Release.Name $middlewareData.name) $middlewareData.name $.Values.ingressClass.enabled }}
+  namespace: {{ $.Release.Namespace }}
+spec:
+  plugin:
+    crowdsec-bouncer-traefik-plugin:
+      CrowdsecLapiKey: {{ $middlewareData.crowdsecLapiKey }}
+      Enabled: "true"
+      CrowdsecLapiHost: {{ $middlewareData.host }}
+{{- end -}}
