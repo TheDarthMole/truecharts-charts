@@ -10,5 +10,5 @@ spec:
     crowdsec-bouncer-traefik-plugin:
       CrowdsecLapiKey: {{ $middlewareData.crowdsecLapiKey }}
       Enabled: "true"
-      CrowdsecLapiHost: {{ $middlewareData.host }}
+      CrowdsecLapiHost: {{ $middlewareData.crowdsecLapiHost }}
 {{- end -}}

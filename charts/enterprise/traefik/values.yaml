@@ -432,7 +432,10 @@ middlewares:
   ## Note: body of every request will be buffered in memory while the request is in-flight
   ## (i.e.: during the security check and during the request processing by traefik and the backend),
   ## so you may want to tune maxBodySize depending on how much RAM you have.
-
+  crowdsec:
+    - name: crowdsec
+      crowdsecLapiKey: test
+      crowdsecLapiHost: test
 portalhook:
   enabled: true
 

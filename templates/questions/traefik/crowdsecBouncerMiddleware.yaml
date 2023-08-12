@@ -23,7 +23,7 @@
                 type: string
                 required: true
                 default: ""
-            - variable: host
+            - variable: crowdsecLapiHost
               label: Crowdsec Local API Host
               description: This is the host from you local crowdsec api server.
               schema:
